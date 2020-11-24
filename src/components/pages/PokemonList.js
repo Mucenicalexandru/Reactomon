@@ -24,22 +24,35 @@ class PokemonList extends React.Component{
 
     render() {
         return <React.Fragment>
+            <div className='container'>
+                <ul>
+                    {this.state.data.results.map(result =>
+                        <div className="card" style={{width: 18 + 'rem'}}>
+                            <div className="card-body">
+                                <a href='#'>{result.name}</a>
+                                {/*<img src="/images/001.png" alt=""/>*/}
+                            </div>
+                        </div>
+                )}
+                </ul>
+            </div>
+            
             <div>
-                <ul>{this.state.data.results.map(result =>
-                    <li>
-                        {result.name}
-                    </li>
-                )}</ul>
+                <img src="/images/001.png" alt=""/>
+                <img src="/images/002.png" alt=""/>
+                <img src="/images/003.png" alt=""/>
             </div>
 
-            {/*<div className="card" style="width: 18rem;">*/}
-            {/*    <div className="card-body">*/}
-            {/*        <h5 className="card-title">Card title</h5>*/}
-            {/*        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the*/}
-            {/*            card's content.</p>*/}
-            {/*        <a href="#" className="btn btn-primary">Go somewhere</a>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+
+
+
+            <nav aria-label="Page navigation example">
+                <ul className="pagination">
+                    <li className="page-item"><a className="page-link" href="#">Previous</a></li>
+                    <li className="page-item"><a className="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+
 
             </React.Fragment>
     }

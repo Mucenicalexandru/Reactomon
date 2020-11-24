@@ -6,6 +6,7 @@ import DetailedView from "./components/pages/DetailedView";
 import TypeList from "./components/pages/TypeList";
 // import './App.css';
 
+
 class App extends React.Component {
 
 
