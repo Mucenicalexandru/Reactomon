@@ -4,7 +4,7 @@ import Header from "./components/layout/Header";
 import PokemonList from "./components/pages/PokemonList";
 import DetailedView from "./components/pages/DetailedView";
 import TypeList from "./components/pages/TypeList";
-import './App.css';
+// import './App.css';
 
 class App extends React.Component {
 
