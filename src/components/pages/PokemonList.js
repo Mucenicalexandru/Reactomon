@@ -9,12 +9,28 @@ import TypeList from "./TypeList";
 
 function PokemonList(){
 
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemonList, setPokemonList] = useState([]);
     const [currentPage, setCurrentPage] = useState('https://pokeapi.co/api/v2/pokemon');
+    const [previousPage, setPreviousPage] = useState();
+    const [nextPage, setNextPage] = useState();
+
+
+
+    useEffect(() =>{
+        axios.get(currentPage)
+            .then(res => {
+                console.log(res.data.results)
+                setPokemonList(res.data.results)
+            })
+    }, [currentPage])
 
 
     return (
-
+        <>
+            {pokemonList.map(pokemon =>{
+                return <div>{pokemon.name}</div>
+            })}
+        </>
     )
 
 }
