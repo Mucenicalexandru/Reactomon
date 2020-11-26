@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-class Header extends React.Component{
+class Navbar extends React.Component{
     render() {
         return (
             <header style={headerStyle}>
-                <h1 style={titleStyle}>Pokemon</h1>
+                <h1 style={titleStyle}>{this.props.title}</h1>
                 <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
             </header>
         )
@@ -26,4 +26,4 @@ const titleStyle = {
     color: "#00008b"
 }
 
-export default Header;
+export default Navbar;
