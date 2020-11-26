@@ -15,7 +15,7 @@ function App() {
     return (
         <>
             <Router>
-                <Navbar/>
+                <Navbar title={'Pokemon App'}/>
                 <Route path={'/pokemons'} component={PokemonList}/>
                 <Route path={'/types'} component={TypeList}/>
             </Router>

@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-class Navbar extends React.Component{
-    render() {
-        return (
-            <header style={headerStyle}>
-                <h1 style={titleStyle}>{this.props.title}</h1>
-                <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
-            </header>
-        )
-    }
+function Navbar(props){
+    return(
+        <header style={headerStyle}>
+            <h1 style={titleStyle}>{props.title}</h1>
+            <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
+        </header>
+    )
 }
 
 

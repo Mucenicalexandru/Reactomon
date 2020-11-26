@@ -19,8 +19,9 @@ function PokemonList(){
     useEffect(() =>{
         axios.get(currentPage)
             .then(res => {
-                console.log(res.data.results)
                 setPokemonList(res.data.results)
+                setNextPage(res.data.next)
+                setPreviousPage(res.data.previous)
             })
     }, [currentPage])
 
@@ -30,6 +31,12 @@ function PokemonList(){
             {pokemonList.map(pokemon =>{
                 return <div>{pokemon.name}</div>
             })}
+
+            <Button variant="outline-primary" onClick={() =>
+            setCurrentPage(previousPage)}>Previous</Button>{' '}
+
+            <Button variant="outline-primary" onClick={() =>
+            setCurrentPage(nextPage)}>Next</Button>{' '}
         </>
     )
 
