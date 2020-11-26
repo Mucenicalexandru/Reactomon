@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import { Container, Row, Col } from 'reactstrap';
 
 function TypeList(){
 
@@ -12,11 +13,13 @@ function TypeList(){
     }, [types])
 
     return(
-        <>
-            {types.map(type => {
-                return <div>{type.name}</div>
-            })}
-        </>
+        <Container>
+            <Row>
+                {types.map(type => {
+                    return <Col xs="3">{type.name}</Col>
+                })}
+            </Row>
+        </Container>
 
     )
 }

@@ -1,19 +1,24 @@
+import {Link} from "react-router-dom";
 import React from 'react';
-import { Link } from "react-router-dom";
+import 'react-clock/dist/Clock.css';
+
+function Navbar(){
 
 
-function Navbar(props){
     return(
         <header style={headerStyle}>
-            <h1 style={titleStyle}>{props.title}</h1>
-            <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
+
+                <img src={"/images/pokemon.png"} alt=""/>
+
+            <div>
+                <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
+            </div>
         </header>
     )
 }
 
 
 const headerStyle = {
-    background: "#00ffff",
     color: "#fff",
     textAlign: "center",
     padding: "10px"

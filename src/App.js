@@ -4,20 +4,19 @@ import Navbar from "./components/layout/Navbar";
 import PokemonList from "./components/pages/PokemonList";
 import DetailedView from "./components/pages/DetailedView";
 import TypeList from "./components/pages/TypeList";
+import Example from "./components/pages/Example";
 
 
 
 function App() {
 
-
-
-
     return (
         <>
             <Router>
-                <Navbar title={'Pokemon App'}/>
+                <Navbar/>
                 <Route path={'/pokemons'} component={PokemonList}/>
                 <Route path={'/types'} component={TypeList}/>
+                <Route path={'/example'} component={Example}/>
             </Router>
         </>
     )
