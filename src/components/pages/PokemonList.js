@@ -54,11 +54,7 @@ function PokemonList(){
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={`images/${index+currentId}.png`} />
                                     <Card.Body>
-                                        <Card.Title>{pokemon.name}</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the bulk of
-                                            the card's content.
-                                        </Card.Text>
+                                        <Card.Title style={{textAlign: 'center'}}>{pokemon.name}</Card.Title>
                                         <Button variant="primary">
                                                 <Link
                                                     to={`/details/${index+currentId}`}

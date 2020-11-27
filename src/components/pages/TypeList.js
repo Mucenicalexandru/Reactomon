@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import {Link} from "react-router-dom";
-import { Container, Row, Col } from 'reactstrap';
+import {Container, Row, Col, ListGroupItem, ListGroup} from 'reactstrap';
 
 function TypeList(){
 
@@ -14,14 +14,26 @@ function TypeList(){
 
     return(
         <Container>
-            <Row>
+            <Row style={typeStyle}>
                 {types.map(type => {
-                    return <Col xs="3">{type.name}</Col>
-                })}
+                    return <Col xs='3' style={{marginTop: "20px"}}>
+                                <ListGroup>
+                                    <ListGroupItem color="info">{type.name}</ListGroupItem>
+                                </ListGroup>
+                            </Col>
+                        })}
+                {/*{types.map(type => {*/}
+                {/*    return <Col xs="3">{type.name}</Col>*/}
+                {/*})}*/}
             </Row>
         </Container>
 
     )
+}
+
+const typeStyle = {
+    textAlign: 'center',
+    fontWeight: 'bold'
 }
 
 export default TypeList;

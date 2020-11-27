@@ -1,18 +1,21 @@
 import {Link} from "react-router-dom";
 import React from 'react';
 import 'react-clock/dist/Clock.css';
+import Switch from "./Switches";
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 function Navbar(){
 
 
     return(
         <header style={headerStyle}>
-
-                <img src={"/images/pokemon.png"} alt=""/>
-
             <div>
-                <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
+                <Link to={'/'}><img src={"/images/pokemon.png"} alt=""/></Link>
             </div>
+            <div>
+                <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link> | <Switch/>
+            </div>
+
         </header>
     )
 }

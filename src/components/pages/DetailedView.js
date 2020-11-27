@@ -3,7 +3,17 @@ import axios from 'axios';
 import PokemonList from "./PokemonList";
 import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import {ListGroup, ListGroupItem} from "reactstrap";
+import styled from 'styled-components'
+import {Col, Container, Row, ListGroup, ListGroupItem} from "reactstrap";
+
+//using styled component
+const Name = styled.h1`
+  text-align: center;
+  color: #796666;
+  border: solid;
+  border-radius: 10px;
+  box-shadow: 5px 10px #a19c9c;
+`
 
 function DetailedView(props){
 
@@ -11,6 +21,7 @@ function DetailedView(props){
     const [height, setHeight] = useState('')
     const [weight, setWeight] = useState('')
     const [abilities, setAbilities] = useState([])
+    const [species, setSpecies] = useState({})
 
     // id is taken from -> <Route path={'/details/:id'} component={DetailedView}/>
     let pokemonId = props.match.params.id
@@ -21,27 +32,45 @@ function DetailedView(props){
                 setExperience(res.data.base_experience)
                 setHeight(res.data.height)
                 setWeight(res.data.weight)
+                setAbilities(res.data.abilities)
+                setSpecies(res.data.species)
             })
-    })
+    }, [pokemonId])
 
     return (
         <>
-            <div style={listGroup}>
-                <ListGroup >
-                    <ListGroupItem color="info">Experience : {experience}</ListGroupItem>
-                    <ListGroupItem color="info">Height : {height}</ListGroupItem>
-                    <ListGroupItem color="info">Weight : {weight}</ListGroupItem>
-                    <ListGroupItem color="info">Dapibus ac facilisis in</ListGroupItem>
-                </ListGroup>
-            </div>
+            <Container>
+                <Row>
+                    <Col xs="6">
+                        <img src={`/images/${pokemonId}.png`} alt=""/>
+                        <Name>{species.name}</Name>
+
+                    </Col>
+                    <div style={listGroup}>
+                        <Col xs="6">
+
+                                <ListGroup >
+                                    <ListGroupItem color="info">Experience : {experience}</ListGroupItem>
+                                    <ListGroupItem color="info">Height : {height}</ListGroupItem>
+                                    <ListGroupItem color="info">Weight : {weight}</ListGroupItem>
+                                    {abilities.map((allAbilities, index) => {
+                                        return <ListGroupItem color="info">Ability {index+1} : {allAbilities.ability.name}</ListGroupItem>
+                                    })}
+                                </ListGroup>
+                        </Col>
+                    </div>
+                </Row>
+            </Container>
+
         </>
     )
 }
 
 const listGroup = {
     margin: 'auto',
-    width: '25%',
+    width: '50%',
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    padding: '10px'
 }
 export default DetailedView;

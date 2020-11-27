@@ -4,7 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import PokemonList from "./components/pages/PokemonList";
 import DetailedView from "./components/pages/DetailedView";
 import TypeList from "./components/pages/TypeList";
-import Example from "./components/pages/Example";
+import Switch from "./components/layout/Switches";
 
 
 
