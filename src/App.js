@@ -16,7 +16,7 @@ function App() {
                 <Navbar/>
                 <Route path={'/pokemons'} component={PokemonList}/>
                 <Route path={'/types'} component={TypeList}/>
-                <Route path={'/example'} component={Example}/>
+                <Route path={'/details/:id'} component={DetailedView}/>
             </Router>
         </>
     )

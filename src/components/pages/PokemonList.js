@@ -1,8 +1,14 @@
 import axios from 'axios';
 import './pages.css';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import {Button, Card} from 'react-bootstrap';
 import {Col, Container, Row} from 'reactstrap';
 import React, {useEffect, useState} from 'react';
+import {Link} from "react-router-dom";
+import styled from 'styled-components'
+import DetailedView from "./DetailedView";
+
+
 
 
 function PokemonList(){
@@ -13,7 +19,7 @@ function PokemonList(){
     const [nextPage, setNextPage] = useState('');
     const [currentId, setCurrentId] = useState(1);
 
-    console.log(currentId)
+
     useEffect(() =>{
         axios.get(currentPage)
             .then(res => {
@@ -44,7 +50,7 @@ function PokemonList(){
         <Container>
             <Row>
             {pokemonList.map((pokemon,index) =>{
-                return <Col xs="3">
+                return <Col xs="4">
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={`images/${index+currentId}.png`} />
                                     <Card.Body>
@@ -53,7 +59,13 @@ function PokemonList(){
                                             Some quick example text to build on the card title and make up the bulk of
                                             the card's content.
                                         </Card.Text>
-                                        <Button variant="primary">See details</Button>
+                                        <Button variant="primary">
+                                                <Link
+                                                    to={`/details/${index+currentId}`}
+                                                    style={{color: 'white'}}>See details
+                                                </Link>
+                                        </Button>
+
                                     </Card.Body>
                             </Card>
                         </Col>
