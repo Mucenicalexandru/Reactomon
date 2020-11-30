@@ -25,7 +25,7 @@ function App() {
             <Router>
                         <Navbar/>
                         <div style={headerStyle}>
-                            <Link onClick={() => setTheme(theme.mode === 'dark' ? {mode : 'light'} : {mode : 'dark'})}>{theme.mode === 'dark' ? "Switch to Day Mode" : "Switch to Night Mode"}</Link>
+                            <button onClick={() => setTheme(theme.mode === 'dark' ? {mode : 'light'} : {mode : 'dark'})}>{theme.mode === 'dark' ? "Switch to Day Mode" : "Switch to Night Mode"}</button>
                         </div>
                         <Route path={'/pokemons'} component={PokemonList}/>
                         <Route path={'/types'} component={TypeList}/>
