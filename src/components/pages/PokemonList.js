@@ -48,7 +48,7 @@ function PokemonList(){
         <Container>
             <Row>
             {pokemonList.map((pokemon,index) =>{
-                return <Col xs="4">
+                return <Col xs="4" key={pokemon.name}>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={`images/${index+currentId}.png`} />
                                     <Card.Body>

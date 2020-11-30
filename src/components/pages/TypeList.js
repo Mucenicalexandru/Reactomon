@@ -18,7 +18,7 @@ function TypeList(){
             <Container>
                 <Row style={typeStyle}>
                     {types.map(type => {
-                        return <Col xs='3' style={{marginTop: "20px"}}>
+                        return <Col xs='3' style={{marginTop: "20px"}} key={type}>
                                     <ListGroup>
                                         <ListGroupItem color="info">{type.name}</ListGroupItem>
                                     </ListGroup>
