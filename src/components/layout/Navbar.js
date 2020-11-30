@@ -1,30 +1,21 @@
 import {Link} from "react-router-dom";
-import React, {useContext} from 'react';
+import React from 'react';
 import 'react-clock/dist/Clock.css';
-import {ThemeContext} from '../../ThemeContext.js';
-import Switches from './Switches.js'
-import styled from "styled-components";
 
-
-function Navbar(){
-
-    const [background, setBackground] = useContext(ThemeContext);
-
-    const Background = styled.div`
-    background-color: ${background};
-`
+export function Navbar(){
 
     return(
-        <Background>
+        <div>
+
             <header style={headerStyle}>
                 <div>
                     <Link to={'/'}><img src={"/images/pokemon.png"} alt=""/></Link>
                 </div>
                 <div>
-                    <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link> | <Switches/>
+                    <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link>
                 </div>
             </header>
-        </Background>
+        </div>
 
     )
 }

@@ -1,11 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
-import PokemonList from "./PokemonList";
-import {Button, Card} from "react-bootstrap";
-import {Link} from "react-router-dom";
 import styled from 'styled-components'
-import {Col, Container, Row, ListGroup, ListGroupItem} from "reactstrap";
-import {ThemeContext} from "../../ThemeContext";
+import {Col, Container, ListGroup, ListGroupItem, Row} from "reactstrap";
 
 
 
@@ -21,10 +17,7 @@ const Name = styled.h1`
 
 
 function DetailedView(props){
-    const [background, setBackground] = useContext(ThemeContext);
-    const Background = styled.div`
-    background-color: ${background};
-`
+
 
     const [experience, setExperience]  = useState('')
     const [height, setHeight] = useState('')
@@ -47,7 +40,7 @@ function DetailedView(props){
     }, [pokemonId])
 
     return (
-        <Background>
+        <div>
             <Container>
                 <Row>
                     <Col xs="6">
@@ -71,7 +64,7 @@ function DetailedView(props){
                 </Row>
             </Container>
 
-        </Background>
+        </div>
     )
 }
 

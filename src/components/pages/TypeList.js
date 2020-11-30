@@ -1,20 +1,13 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from 'axios';
-import {Link} from "react-router-dom";
-import {Container, Row, Col, ListGroupItem, ListGroup} from 'reactstrap';
-import {ThemeContext} from "../../ThemeContext";
-import styled from 'styled-components';
-
+import {Col, Container, ListGroup, ListGroupItem, Row} from 'reactstrap';
 
 
 function TypeList(){
 
-    const [background, setBackground] = useContext(ThemeContext);
+
     const [types, setTypes] = useState([])
 
-    const Background = styled.div`
-    background-color: ${background};
-`
 
     useEffect(() => {
         axios.get('https://pokeapi.co/api/v2/type')
@@ -22,7 +15,6 @@ function TypeList(){
     }, [types])
 
     return(
-        <Background>
             <Container>
                 <Row style={typeStyle}>
                     {types.map(type => {
@@ -34,7 +26,6 @@ function TypeList(){
                             })}
                 </Row>
             </Container>
-        </Background>
 
     )
 }
