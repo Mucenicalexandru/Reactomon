@@ -1,17 +1,19 @@
 import axios from 'axios';
 import './pages.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Button, Card} from 'react-bootstrap';
 import {Col, Container, Row} from 'reactstrap';
-import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
-import styled from 'styled-components'
-import DetailedView from "./DetailedView";
-
-
+import React, {useContext, useEffect, useState} from 'react';
+import {ThemeContext} from "../../ThemeContext";
+import styled from "styled-components";
 
 
 function PokemonList(){
+
+    const [background, setBackground] = useContext(ThemeContext);
+    const Background = styled.div`
+    background-color: ${background};
+`
 
     const [pokemonList, setPokemonList] = useState([]);
     const [currentPage, setCurrentPage] = useState('https://pokeapi.co/api/v2/pokemon');
@@ -31,7 +33,7 @@ function PokemonList(){
 
 
     return (
-        <>
+        <Background>
         <div style={buttonStyle}>
             <Button variant="outline-primary" onClick={() =>{
                 setCurrentPage(previousPage);
@@ -68,7 +70,7 @@ function PokemonList(){
             })}
             </Row>
         </Container>
-        </>
+        </Background>
     )
 
 }
