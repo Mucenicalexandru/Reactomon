@@ -5,6 +5,8 @@ import {Container, Row, Col, ListGroupItem, ListGroup} from 'reactstrap';
 import {ThemeContext} from "../../ThemeContext";
 import styled from 'styled-components';
 
+
+
 function TypeList(){
 
     const [background, setBackground] = useContext(ThemeContext);

@@ -35,18 +35,20 @@ function PokemonList(){
     return (
         <Background>
         <div style={buttonStyle}>
-            <Button variant="outline-primary" onClick={() =>{
+            {previousPage && <Button variant="outline-primary" onClick={() =>{
                 setCurrentPage(previousPage);
                 setCurrentId(currentId - 20)
             }
 
-            }>Previous</Button>{' '}
+            }>Previous</Button>}
 
-            <Button variant="outline-primary" onClick={() =>{
+
+            {nextPage && <Button variant="outline-primary" onClick={() =>{
                 setCurrentPage(nextPage);
                 setCurrentId(currentId + 20)
             }
-            }>Next</Button>{' '}
+            }>Next</Button>}
+
         </div>
 
         <Container>

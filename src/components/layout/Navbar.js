@@ -23,9 +23,6 @@ function Navbar(){
                 <div>
                     <Link to="/pokemons">Pokemons</Link> | <Link to="/types">Types</Link> | <Switches/>
                 </div>
-                <div>
-                    Mucenic Alexandru {background}
-                </div>
             </header>
         </Background>
 
