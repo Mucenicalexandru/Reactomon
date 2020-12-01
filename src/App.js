@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Navbar} from "./components/layout/Navbar";
 import PokemonList from "./components/pages/PokemonList";
 import DetailedView from "./components/pages/DetailedView";

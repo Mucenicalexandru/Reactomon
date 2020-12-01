@@ -26,9 +26,4 @@ const headerStyle = {
     padding: "10px"
 }
 
-
-const titleStyle = {
-    color: "#00008b"
-}
-
 export default Navbar;
